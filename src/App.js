@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import "./App.css";
+import { vocabe } from "./vocabe";
 function App() {
+  const randomvocabulary = Math.floor(
+    Math.random() * Math.floor(vocabe.length)
+  );
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="card">
+        <h2 className="title">{vocabe[randomvocabulary].FIELD1}</h2>
+       
+        <p className="text">{vocabe[randomvocabulary].FIELD2}</p>
+      </div>
+      <div className="footer">built with 🤍 by Ahmed Salama</div>
     </div>
   );
 }
-
 export default App;
